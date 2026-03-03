@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Exercice Routeur MVC</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.php">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="index.php?route=a-propos">À propos</a>
+                    </li>
+                    <li>
+                        <a href="index.php?route=contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <?php
+            if ($route === "home") {
+                require __DIR__ . "/home.phtml";
+            }
+            else if ($route === "about") {
+                require __DIR__ . "/about.phtml";
+            }
+            else if ($route === "contact") {
+                require __DIR__ . "/contact.phtml";
+            }
+            else {
+                require __DIR__ . "/notFound.phtml";
+            }
+        ?>
+    </body>
+</html>
